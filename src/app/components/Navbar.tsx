@@ -1,24 +1,29 @@
 import React from 'react'
+import Link from "next/link";
 
 const Navbar = () => {
+
+    const navList: string[] = ["Home","Listings", "Reviews", "Contact"]
+
     return (
-        <div className={"flex px-5"}>
-            {/*TODO: Correct the navbar widht and positioning*/}
+        <nav className={"flex w-full justify-between items-center px-10 py-5"}>
             {/*Logo*/}
-            <div className={"border border-black"}>
+            <div className={""}>
                 <p className={"text-3xl font-bold"}>Hotelify</p>
             </div>
             {/*Menu*/}
-            <div className={"border border-black"}>
-                <ul className={"flex justify-end items-center w-full "}>
-                    <li>Start</li>
-                    <li>Hotels</li>
-                    <li>Reviews</li>
-                    <li>Contact</li>
+            <div className={"w-full "}>
+                <ul className={"flex justify-end items-center w-full space-x-8 "}>
+                    {navList.map(item => (
+                        <li key={item}>
+                            {/*TODO: Add tailwind to LI items*/}
+                            <Link href={item === "Home" ? "/" : `/${item.toLowerCase()}`}>{item}</Link>
+                        </li>
+                    ))}
                 </ul>
             </div>
 
-        </div>
+        </nav>
     )
 }
 export default Navbar
