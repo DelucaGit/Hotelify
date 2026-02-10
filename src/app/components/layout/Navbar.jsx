@@ -20,7 +20,7 @@ const Navbar = () => {
                         <li key={item}>
                             <Link
                                 className={"font-bold"}
-                                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}>{item}</Link>
+                                href={item === "Home" ? "/public" : `/${item.toLowerCase()}`}>{item}</Link>
                         </li>
                     ))}
                 </ul>
@@ -43,7 +43,7 @@ const Navbar = () => {
                             <li key={item}>
                                 <Link
                                     className={"font-bold"}
-                                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                                    href={item === "Home" ? "/public" : `/${item.toLowerCase()}`}
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {item}
