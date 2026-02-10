@@ -16,8 +16,10 @@ const Navbar = () => {
                 <ul className={"flex justify-end items-center w-full space-x-8 "}>
                     {navList.map(item => (
                         <li key={item}>
-                            {/*TODO: Add tailwind to LI items*/}
-                            <Link href={item === "Home" ? "/" : `/${item.toLowerCase()}`}>{item}</Link>
+
+                            <Link
+                                className={"font-bold"}
+                                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}>{item}</Link>
                         </li>
                     ))}
                 </ul>
