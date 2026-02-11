@@ -21,7 +21,7 @@ const Page = async ({params}) => {
                 className={"object-cover"}
             />
         </div>
-        <main className={"pl-5 pt-9 max-w-9/10 md:mx-auto"}>
+        <main className={"pl-5 pt-9 pb-9 max-w-9/10 md:mx-auto"}>
             <div className={"grid grid-cols-1 md:grid-cols-3 gap-4"}>
 
                 {/*Left column - Hotel information*/}
