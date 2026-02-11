@@ -21,7 +21,7 @@ const Page = async ({params}) => {
                 className={"object-cover"}
             />
         </div>
-        <main className={"pl-5"}>
+        <main className={"pl-5 pt-9 max-w-9/10 md:mx-auto"}>
             <div className={"grid grid-cols-1 md:grid-cols-3 gap-4"}>
 
                 {/*Left column - Hotel information*/}
@@ -63,13 +63,20 @@ const Page = async ({params}) => {
                     <div className={"mt-5 leading-relaxed"}>
                         <h2>About this hotel</h2>
                         <p >{hotel.fullDescription}</p>
+                        <div className={"md:hidden"}>
                         <BookingButton/>
+                        </div>
                     </div>
 
                 </div>
                 {/*Right column*/}
-                <div className={"hidden md:block col-span-1"}>
+                <div className={"hidden md:block col-span-1 "}>
+                    <div className={"sticky top-10 bg-green-50 p-5 rounded-2xl shadow-lg"}>
+                        <h3>Book here</h3>
+                        <p>Book now & Pay 30 days later!</p>
+                        <BookingButton/>
 
+                    </div>
                 </div>
             </div>
         </main>

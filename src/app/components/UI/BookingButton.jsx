@@ -11,7 +11,7 @@ const BookingButton = () => {
             className={"bg-red-800 text-white font-bold p-2 rounded-2xl" }
             onClick={handleBooking}
         >
-            Press me
+            Book now & Pay later
         </button>
     )
 }
