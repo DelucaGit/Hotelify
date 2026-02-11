@@ -19,7 +19,7 @@ const Listings = () => {
                         {hotel.name}
                     </h3>
                     <p className={"mt-2"}>
-                        {hotel.description}
+                        {hotel.summary}
                     </p>
                     <p className={"font-bold mt-2 text-xl"}>
                         ${hotel.price}
