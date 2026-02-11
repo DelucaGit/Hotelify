@@ -1,18 +1,16 @@
 "use client";
 import React from 'react'
+import Link from "next/link";
 
-const BookingButton = () => {
-    const handleBooking = () => {
-        alert("Booking button clicked!");
-    }
-
+const BookingButton = ({hotelId}) => {
+    if(!hotelId) return null;
     return (
-        <button
+        <Link
             className={"bg-red-800 text-white font-bold p-2 rounded-2xl" }
-            onClick={handleBooking}
+            href={`/booking/${hotelId}`}
         >
             Book now & Pay later
-        </button>
+        </Link>
     )
 }
 export default BookingButton
