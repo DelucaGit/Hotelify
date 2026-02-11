@@ -6,17 +6,24 @@ const Page = async ({params}) => {
     const {id} = await params;
     const hotel = hotels.find(h => h.id.toString() === id); // Because URL params will always be String
     return (
-        <main>
+        <>
+        <div className={"relative w-full h-[300px] md:h-[500px]"}>
             <Image
                 src={hotel.image}
                 alt={hotel.name}
-                width={600}
-                height={400}
+                priority={true} // Tells Next.js to load it first
+                fill={true}
                 suppressHydrationWarning={true}
                 unoptimized={true}
+                className={"object-cover"}
             />
 
+        </div>
+        <main>
+
         </main>
+
+        </>
     )
 }
 export default Page
