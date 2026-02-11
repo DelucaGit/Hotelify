@@ -17,9 +17,11 @@ const Page = async ({params}) => {
                 unoptimized={true}
                 className={"object-cover"}
             />
-
         </div>
         <main>
+            <h1 className={"ml-5 mt-5"}>
+                {hotel.name}
+            </h1>
 
         </main>
 
