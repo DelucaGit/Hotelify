@@ -1,5 +1,6 @@
 import React from 'react'
 import {hotels} from '../../data/localdata'
+import Link from "next/link";
 
 
 const Listings = () => {
@@ -9,7 +10,8 @@ const Listings = () => {
             <p className={"mb-5"}>We have the most luxurious adventures waiting for you.</p>
             <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center "}>
             {hotels.map(hotel =>
-                <div key={hotel.id} className={"border border-blue-50 p-6 border rounded-2xl"}>
+                <Link key={hotel.id} href={`/listings/${hotel.id}`}>
+                <div className={"border border-blue-50 p-6 border rounded-2xl"}>
                     <img
                         className={"rounded-2xl"}
                         src={hotel.image} alt={hotel.name}
@@ -27,7 +29,8 @@ const Listings = () => {
                     <p className={"text-sm"}>
                         avg per night
                     </p>
-                </div>)}
+                </div>
+                </Link>)}
 
             </div>
         </section>

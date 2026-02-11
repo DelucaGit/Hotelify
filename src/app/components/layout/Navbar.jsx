@@ -10,7 +10,7 @@ const Navbar = () => {
         <nav className={"relative flex w-full justify-between items-center px-10 py-5"}>
             {/* Logo */}
             <div>
-                <p className={"text-3xl font-bold"}>Hotelify</p>
+                <Link href={"/"} className={"text-3xl font-bold"}>Hotelify</Link>
             </div>
 
             {/* Desktop Menu */}
