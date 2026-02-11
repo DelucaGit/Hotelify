@@ -4,10 +4,9 @@ import {hotels} from '../../data/localdata'
 
 const Listings = () => {
     return (
-
         <section className={"max-w-9/10 mx-auto"}>
             <h2 className={"mb-5"}>Where is your next stop?</h2>
-            <p className={"mb-5"}>We have the most luxorious adventures waiting for you.</p>
+            <p className={"mb-5"}>We have the most luxurious adventures waiting for you.</p>
             <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center "}>
             {hotels.map(hotel =>
                 <div key={hotel.id} className={"border border-blue-50 p-6 border rounded-2xl"}>
