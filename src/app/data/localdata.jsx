@@ -4,65 +4,77 @@ export const hotels = [
         name: "The Azure Vault",
         location: "Santorini, Greece",
         summary: "Experience cliffside luxury with infinity pools overlooking the Aegean Sea.",
-        fullDescription: `Perched on the iconic cliffs of Oia, The Azure Vault is a masterpiece of Cycladic architecture. This hotel offers guests private heated infinity pools, 24-hour personalized butler service, and an underground spa carved into volcanic rock. It's the ultimate destination for those seeking privacy and breathtaking sunsets over the caldera.`,
+        fullDescription: `Perched on the iconic cliffs of Oia, The Azure Vault is a masterpiece of Cycladic architecture. This hotel offers guests private heated infinity pools, 24-hour personalized butler service, and an underground spa carved into volcanic rock.`,
         price: 450,
         rating: 4.9,
         category: "Luxury",
-        image: "https://placehold.co/600x400?text=The+Azure+Vault"
+        image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1200&h=800&auto=format&fit=crop",
+        coordinates: { lat: 36.4618, lng: 25.3753 },
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=36.4618,25.3753"
     },
     {
         id: 2,
         name: "Urban Nest",
         location: "Tokyo, Japan",
         summary: "Minimalist design meets high-tech comfort in the heart of Shibuya.",
-        fullDescription: `Urban Nest redefines the city hotel experience. Located just minutes from the famous Shibuya Crossing, this boutique hotel features smart-glass windows, voice-controlled room settings, and a rooftop bar with 360-degree views of the Tokyo skyline. The aesthetic is clean, quiet, and perfectly balanced against the energy of the city.`,
+        fullDescription: `Urban Nest redefines the city hotel experience. Located just minutes from the famous Shibuya Crossing, this boutique hotel features smart-glass windows, voice-controlled room settings, and a rooftop bar.`,
         price: 180,
         rating: 4.7,
         category: "Boutique",
-        image: "https://placehold.co/600x400?text=Urban+Nest"
+        image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1200&h=800&auto=format&fit=crop",
+        coordinates: { lat: 35.6581, lng: 139.7017 },
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=35.6581,139.7017"
     },
     {
         id: 3,
         name: "Cedar Ridge Lodge",
         location: "Aspen, USA",
         summary: "A cozy ski-in/ski-out retreat with roaring fireplaces and mountain views.",
-        fullDescription: `Nestled at the base of the Silver Queen Gondola, Cedar Ridge Lodge is a sanctuary for winter sports enthusiasts. The lodge features hand-carved cedar beams, a massive floor-to-ceiling stone fireplace in the lobby, and world-class après-ski amenities including heated outdoor mineral pools and a specialized ski concierge.`,
+        fullDescription: `Nestled at the base of the Silver Queen Gondola, Cedar Ridge Lodge is a sanctuary for winter sports enthusiasts. The lodge features hand-carved cedar beams and a massive floor-to-ceiling stone fireplace.`,
         price: 320,
         rating: 4.8,
         category: "Mountain",
-        image: "https://placehold.co/600x400?text=Cedar+Ridge+Lodge"
+        image: "https://images.unsplash.com/photo-1549408180-bfe486c3a96e?q=80&w=1200&h=800&auto=format&fit=crop",
+        coordinates: { lat: 39.1911, lng: -106.8175 },
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=39.1911,-106.8175"
     },
     {
         id: 4,
         name: "Marigold Manor",
         location: "London, UK",
         summary: "Classic Victorian elegance with modern amenities and a private garden.",
-        fullDescription: `A restored Victorian townhouse in Kensington, Marigold Manor blends 19th-century charm with 21st-century luxury. Guests can enjoy traditional afternoon tea in the private walled garden or retire to rooms adorned with velvet drapery and antique furnishings. It offers a peaceful, aristocratic atmosphere in the center of London.`,
+        fullDescription: `A restored Victorian townhouse in Kensington, Marigold Manor blends 19th-century charm with 21st-century luxury. Guests can enjoy traditional afternoon tea in the private walled garden.`,
         price: 290,
         rating: 4.5,
         category: "Classic",
-        image: "https://placehold.co/600x400?text=Marigold+Manor"
+        image: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1200&h=800&auto=format&fit=crop",
+        coordinates: { lat: 51.5014, lng: -0.1905 },
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=51.5014,-0.1905"
     },
     {
         id: 5,
         name: "The Neon Palms",
         location: "Miami, USA",
         summary: "Vibrant Art Deco vibes just steps away from the South Beach sand.",
-        fullDescription: `Located in the heart of the Art Deco District, The Neon Palms captures the electric spirit of Miami Beach. With pastel-hued interiors, a retro-styled poolside lounge, and live jazz every evening, this hotel is a tribute to 1950s glamour. Each room comes equipped with a vintage-style record player and a curated selection of vinyl.`,
+        fullDescription: `Located in the heart of the Art Deco District, The Neon Palms captures the electric spirit of Miami Beach. With pastel-hued interiors and a retro-styled poolside lounge.`,
         price: 210,
         rating: 4.3,
         category: "Beach",
-        image: "https://placehold.co/600x400?text=The+Neon+Palms"
+        image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&h=800&auto=format&fit=crop",
+        coordinates: { lat: 25.7825, lng: -80.1301 },
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=25.7825,-80.1301"
     },
     {
         id: 6,
         name: "Sahara Sands Resort",
         location: "Marrakech, Morocco",
         summary: "A desert oasis featuring traditional riad architecture and a luxury spa.",
-        fullDescription: `Just outside the bustling Medina, Sahara Sands Resort is a sprawling oasis set amidst lush olive groves. The resort features a massive turquoise central pool, intricately tiled courtyards, and a traditional Moroccan Hammam. It provides a tranquil escape with the Atlas Mountains visible in the distance.`,
+        fullDescription: `Just outside the bustling Medina, Sahara Sands Resort is a sprawling oasis set amidst lush olive groves. The resort features a massive turquoise central pool and intricately tiled courtyards.`,
         price: 250,
         rating: 4.6,
         category: "Resort",
-        image: "https://placehold.co/600x400?text=Sahara+Sands+Resort"
+        image: "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?q=80&w=1200&h=800&auto=format&fit=crop",
+        coordinates: { lat: 31.6295, lng: -7.9811 },
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=31.6295,-7.9811"
     }
 ];

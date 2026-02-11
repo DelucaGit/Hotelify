@@ -63,10 +63,20 @@ const Page = async ({params}) => {
                     <div className={"mt-5 leading-relaxed"}>
                         <h2>About this hotel</h2>
                         <p >{hotel.fullDescription}</p>
-                        <div className={"md:hidden"}>
+                        <div className={"md:hidden mt-5 mb-5"}>
                         <BookingButton/>
                         </div>
                     </div>
+                    <a
+                        href={hotel.mapUrl}
+                        target="_blank"
+                        className="inline-flex items-center gap-2 text-blue-600 font-bold hover:underline mt-4"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                        </svg>
+                        Show on Map
+                    </a>
 
                 </div>
                 {/*Right column*/}
