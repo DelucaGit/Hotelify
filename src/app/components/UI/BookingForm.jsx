@@ -17,11 +17,31 @@ const BookingForm =  (hotelData) => {
         const arrivalDate = formData.get("date")
         const numberOfNights = formData.get("nights")
 
-        console.log(firstName, lastName, email, phone, arrivalDate, numberOfNights)
+
+        const newBooking = {
+            hotel : hotel.name,
+            firstName, // This is the equivalent to writing firstName : firstName.
+            lastName,
+            email,
+            phone,
+            arrivalDate,
+            numberOfNights,
+            costPerNight,
+            id : Math.random().toString()
+        }
+
+        const savedBookings = localStorage.getItem("hotel_bookings");
+        const currentlist = savedBookings ? JSON.parse(savedBookings) : [];
+
+        currentlist.push(newBooking);
+        localStorage.setItem("hotel_bookings", JSON.stringify(currentlist))
+        alert("Your booking has been stored at localStorage")
     }
     return (
-        <>
-            <form action={handleBooking}>
+        <div className={"flex justify-center"}>
+            <form
+                action={handleBooking}
+                className={"md:mx-auto "}>
                 <input
                     type="text"
                     placeholder={"First name"}
@@ -64,7 +84,8 @@ const BookingForm =  (hotelData) => {
                         Submit
                 </button>
             </form>
-        </>
+
+        </div>
     )
 }
 export default BookingForm
