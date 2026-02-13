@@ -1,13 +1,19 @@
 "use client";
 import React, {useState} from 'react'
 
-const BookingForm =  (hotelData) => {
+const BookingForm =  ({hotel}) => {
 
-    const {hotel} =  hotelData
+    const [selectedHoteName, setSelectedHotelName] = useState("");
+    const [selectedHotelPrice, setSelectedHotelPrice] = useState(0);
+
     const [days,setDays] = useState(1);
     const [guests,setGuests] = useState(1);
 
-    const costPerNight = (hotel.price * guests) * days;
+    const displayName = hotel ? hotel.name : selectedHoteName;
+    const displayPrice = hotel ? hotel.price : selectedHotelPrice;
+
+    console.log(hotel)
+    const costPerNight = (displayPrice * guests) * days;
 
     async function handleBooking(formData){
         const firstName = formData.get("firstname")
@@ -19,7 +25,7 @@ const BookingForm =  (hotelData) => {
 
 
         const newBooking = {
-            hotel : hotel.name,
+            hotel : displayName,
             firstName, // This is the equivalent to writing firstName : firstName.
             lastName,
             email,
@@ -42,6 +48,9 @@ const BookingForm =  (hotelData) => {
             <form
                 action={handleBooking}
                 className={"md:mx-auto "}>
+
+                {hotel.name == "" ? (<h2>Choose destination</h2>) : (<h2>Next trip: {hotel.name}</h2>)}
+
                 <input
                     type="text"
                     placeholder={"First name"}
