@@ -2,18 +2,18 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-white border-t border-gray-100 pt-16 pb-8">
+        <footer className="bg-blue-900 text-white border-t border-gray-100 pt-16 pb-8">
             <div className="max-w-9/10 mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                     <div className="col-span-1 md:col-span-1">
-                        <h2 className="text-xl font-bold mb-4">Hotellsidan</h2>
-                        <p className="text-gray-500 text-sm">
+                        <h2 className="text-xl font-bold mb-4 text-white">Hotellsidan</h2>
+                        <p className="text-sm text-white">
                             Providing the most luxurious adventures and stays for your next journey since 2024.
                         </p>
                     </div>
                     <div>
-                        <h4 className="font-bold mb-4">Support</h4>
-                        <ul className="text-sm text-gray-600 space-y-2">
+                        <h4 className="font-bold mb-4 text-white">Support</h4>
+                        <ul className="text-sm  space-y-2">
                             <li>Help Center</li>
                             <li>Safety information</li>
                             <li>Cancellation options</li>
@@ -21,8 +21,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-bold mb-4">Community</h4>
-                        <ul className="text-sm text-gray-600 space-y-2">
+                        <h4 className="font-bold mb-4 text-white">Community</h4>
+                        <ul className="text-sm  space-y-2">
                             <li>Disaster relief housing</li>
                             <li>Support Afghan refugees</li>
                             <li>Celebrating diversity</li>
@@ -30,8 +30,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-bold mb-4">About</h4>
-                        <ul className="text-sm text-gray-600 space-y-2">
+                        <h4 className="font-bold mb-4 text-white">About</h4>
+                        <ul className="text-sm  space-y-2">
                             <li>Newsroom</li>
                             <li>Learn about new features</li>
                             <li>Letter from our founders</li>
@@ -39,7 +39,7 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
                     <div className="mb-4 md:mb-0">
                         © 2024 Hotellsidan Inc. · Privacy · Terms · Sitemap
                     </div>

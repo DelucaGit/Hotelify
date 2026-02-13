@@ -7,7 +7,7 @@ const Navbar = () => {
     const navList = ["Home", "Listings", "Reviews", "Contact"];
 
     return (
-        <nav className={"relative flex w-full justify-between items-center px-10 py-5"}>
+        <nav className={"relative flex w-full justify-between items-center px-10 py-5 bg-blue-900 text-white"}>
             {/* Logo */}
             <div>
                 <Link href={"/"} className={"text-3xl font-bold"}>Hotelify</Link>
