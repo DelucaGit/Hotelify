@@ -11,7 +11,7 @@ const Page = async ({params}) => {
             <h1 className={"text-center"}>Boka hos: {hotel.name}</h1>
             <div className={"border border-gray-50 rounded-2xl shadow-lg p-5 my-9"}>
                 <BookingForm hotel={hotel}/>
-                {/*TODO: Find a way to make BookingForm undependent of hotel data.*/}
+                {/*TODO: Find a way to make BookingForm independent of hotel data.*/}
             </div>
         </main>
     )

@@ -1,6 +1,8 @@
 "use client";
 import React, {useState} from 'react'
 
+// TODO: Add layer of verification. Form can not be sent in empty.
+
 const BookingForm =  ({hotel}) => {
 
     const [selectedHoteName, setSelectedHotelName] = useState("");
@@ -48,8 +50,6 @@ const BookingForm =  ({hotel}) => {
             <form
                 action={handleBooking}
                 className={"md:mx-auto "}>
-
-                {hotel.name == "" ? (<h2>Choose destination</h2>) : (<h2>Next trip: {hotel.name}</h2>)}
 
                 <input
                     type="text"

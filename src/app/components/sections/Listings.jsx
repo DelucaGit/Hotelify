@@ -1,9 +1,10 @@
 import React from 'react'
-import {hotels} from '../../data/localdata'
 import Link from "next/link";
 
+const Listings =  ({hotels}) => {
 
-const Listings = () => {
+    console.log("From Listings",hotels)
+
     return (
         <section className={"max-w-9/10 mx-auto"}>
             <h2 className={"mb-5"}>Where is your next stop?</h2>
