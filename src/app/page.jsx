@@ -9,9 +9,12 @@ export default function Home() {
     return (
         <div className="relative flex flex-col min-h-screen">
 
-            <main className="flex flex-col pt-9 pb-9 max-w-9/10 mx-auto">
-                <HeroSection allHotels={hotels} />
-                <Listings hotels = {hotels} />
+            <main className="flex flex-col  pb-9 mx-auto">
+                    <HeroSection allHotels={hotels} />
+                <div className={"max-w-9/12 mx-auto"}>
+                    <Listings hotels = {hotels} />
+                </div>
+
             </main>
 
         </div>

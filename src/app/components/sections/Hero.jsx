@@ -4,9 +4,14 @@ import BookingFormStartPage from "../UI/BookingFormStartPage";
 const HeroSection = ({allHotels}) => {
     console.log("From Hero", allHotels)
     return (
-        <section className={"flex-1 flex justify-center items-center min-h-[calc(100vh-80px)] bg-cyan-600"}>
+        <section
+            className={"flex-1 flex justify-center items-center min-h-[calc(100vh-80px)] bg-cover bg-center bg-no-repeat relative "}
+            style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.pexels.com/photos/30356959/pexels-photo-30356959.jpeg')`
+            }}>
+
             <div className={" text-center min-full"}>
-                <h1 className={"font-bold text-5xl md:text-8xl text-center "}>
+                <h1 className={"font-bold text-5xl text-center text-white "}>
                     Escape Life - <br/> To A Luxury Beyond Stress
                 </h1>
                 <BookingFormStartPage allHotels={allHotels} />
