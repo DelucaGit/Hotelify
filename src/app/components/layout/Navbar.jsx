@@ -37,12 +37,12 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg rounded-b-lg z-50">
+                <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg rounded-b-lg z-50 ">
                     <ul className="flex flex-col items-center space-y-4 py-4">
                         {navList.map(item => (
                             <li key={item}>
                                 <Link
-                                    className={"font-bold"}
+                                    className={"font-bold text-gray-500"}
                                     href={item === "Home" ? "/public" : `/${item.toLowerCase()}`}
                                     onClick={() => setIsOpen(false)}
                                 >
