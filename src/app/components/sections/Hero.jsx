@@ -10,8 +10,8 @@ const HeroSection = ({allHotels}) => {
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.pexels.com/photos/30356959/pexels-photo-30356959.jpeg')`
             }}>
 
-            <div className={" text-center min-full"}>
-                <h1 className={"font-bold text-5xl text-center text-white "}>
+            <div className={" text-center min-full p-5"}>
+                <h1 className={"font-bold md:text-5xl text-3xl text-center text-white "}>
                     Escape Life For a While - <br/> To A Luxury Beyond Stress
                 </h1>
                 <BookingFormStartPage allHotels={allHotels} />
