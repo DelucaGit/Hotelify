@@ -12,7 +12,7 @@ const HeroSection = ({allHotels}) => {
 
             <div className={" text-center min-full"}>
                 <h1 className={"font-bold text-5xl text-center text-white "}>
-                    Escape Life - <br/> To A Luxury Beyond Stress
+                    Escape Life For a While - <br/> To A Luxury Beyond Stress
                 </h1>
                 <BookingFormStartPage allHotels={allHotels} />
             </div>
