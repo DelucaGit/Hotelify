@@ -18,5 +18,7 @@ const HeroSection = ({allHotels}) => {
             </div>
         </section>
     )
+
+    // Adding just to new push
 }
 export default HeroSection
