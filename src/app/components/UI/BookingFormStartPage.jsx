@@ -11,13 +11,38 @@ const BookingFormStartPage = ({ allHotels = [] }) => {
     const activeHotel = allHotels.find(h => h.id.toString() === selectedId);
     const totalCost = (activeHotel?.price || 0) * guests * nights;
 
-    const handleForm = () => {
-        // Logic goes here
+    const handleBooking= (formdata) => {
+        const firstName = formdata.get("firstname");
+        const lastName = formdata.get("lastname");
+        const email = formdata.get("email");
+        const phone = formdata.get("phone");
+        const arrivalDate = formdata.get("date");
+        const numberOfNights = formdata.get("nights");
+
+        const newBooking = {
+            hotel: activeHotel,
+            firstName,
+            lastName,
+            email,
+            phone,
+            arrivalDate,
+            numberOfNights,
+            id: Math.random().toString()
+        }
+
+        const savedBookings = localStorage.getItem("hotel_bookings");
+        const currentlist = savedBookings ? JSON.parse(savedBookings) : [];
+
+        currentlist.push(newBooking);
+        localStorage.setItem("hotel_bookings", JSON.stringify(currentlist));
+        alert("Your booking has been stored at localStorage")
+
+
     };
 
     return (
         <div className="border border-gray-100 p-6 shadow-lg rounded-2xl bg-white mt-9 mx-auto max-w-6xl">
-            <form action={handleForm} className="space-y-6">
+            <form action={handleBooking} className="space-y-6">
                 <h2 className="text-xl font-semibold">Where is your next escape?</h2>
 
                 {/* 1. First Row: Hotel, First Name, Last Name */}
@@ -59,6 +84,12 @@ const BookingFormStartPage = ({ allHotels = [] }) => {
                         className="border border-gray-200 p-2 rounded-2xl w-full"
                     />
 
+                    <input
+                        type="email"
+                        placeholder={"Email"}
+                        name={"email"}
+                        className={"border border-gray-200 p-2 rounded-2xl w-full"}
+                    />
                     <input
                         type="date"
                         name="dateOfArrival"

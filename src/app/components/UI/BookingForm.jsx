@@ -34,7 +34,6 @@ const BookingForm =  ({hotel}) => {
             phone,
             arrivalDate,
             numberOfNights,
-            costPerNight,
             id : Math.random().toString()
         }
 
