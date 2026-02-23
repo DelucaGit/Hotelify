@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const navList = ["Home", "Listings", "Reviews", "Contact"];
+    const navList = ["Home"];
 
     return (
-        <nav className={"relative flex w-full justify-between items-center px-10 py-5"}>
+        <nav className={"relative flex w-full justify-between items-center px-10 py-5 bg-blue-900 text-white"}>
             {/* Logo */}
             <div>
                 <Link href={"/"} className={"text-3xl font-bold"}>Hotelify</Link>
@@ -20,7 +20,7 @@ const Navbar = () => {
                         <li key={item}>
                             <Link
                                 className={"font-bold"}
-                                href={item === "Home" ? "/public" : `/${item.toLowerCase()}`}>{item}</Link>
+                                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}>{item}</Link>
                         </li>
                     ))}
                 </ul>
