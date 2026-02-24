@@ -63,7 +63,7 @@ const Page = async ({params}) => {
                     <div className={"mt-5 leading-relaxed"}>
                         <h2>About this hotel</h2>
                         <p >{hotel.fullDescription}</p>
-                        <div className={"md:hidden mt-5 mb-5"}>
+                        <div className={"md:hidden mt-9 mb-5"}>
                         <BookingButton hotelId={id}/>
                         </div>
                     </div>

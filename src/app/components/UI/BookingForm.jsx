@@ -1,99 +1,134 @@
-"use client";
-import React, {useState} from 'react'
+"use client"
+import React, { useState, useEffect } from 'react'
 
-// TODO: Add layer of verification. Form can not be sent in empty.
+const BookingForm = ({ hotel }) => {
+    // --- State ---
+    const [guests, setGuests] = useState(1);
+    const [nights, setNights] = useState(1);
 
-const BookingForm =  ({hotel}) => {
+    // --- Logic ---
+    const totalCost = (hotel?.price || 0) * guests * nights;
 
-    const [selectedHoteName, setSelectedHotelName] = useState("");
-    const [selectedHotelPrice, setSelectedHotelPrice] = useState(0);
-
-    const [days,setDays] = useState(1);
-    const [guests,setGuests] = useState(1);
-
-    const displayName = hotel ? hotel.name : selectedHoteName;
-    const displayPrice = hotel ? hotel.price : selectedHotelPrice;
-
-    console.log(hotel)
-    const costPerNight = (displayPrice * guests) * days;
-
-    async function handleBooking(formData){
-        const firstName = formData.get("firstname")
-        const lastName = formData.get("lastname")
-        const email = formData.get("email")
-        const phone = formData.get("phone")
-        const arrivalDate = formData.get("date")
-        const numberOfNights = formData.get("nights")
-
+    const handleBooking = (formdata) => {
+        const firstName = formdata.get("firstname");
+        const lastName = formdata.get("lastname");
+        const email = formdata.get("email");
+        const phone = formdata.get("phone");
+        const arrivalDate = formdata.get("date");
+        const numberOfNights = formdata.get("nights");
 
         const newBooking = {
-            hotel : displayName,
-            firstName, // This is the equivalent to writing firstName : firstName.
+            hotel: hotel,
+            firstName,
             lastName,
             email,
             phone,
             arrivalDate,
             numberOfNights,
-            id : Math.random().toString()
+            guests,
+            totalCost,
+            id: Math.random().toString()
         }
 
         const savedBookings = localStorage.getItem("hotel_bookings");
         const currentlist = savedBookings ? JSON.parse(savedBookings) : [];
 
         currentlist.push(newBooking);
-        localStorage.setItem("hotel_bookings", JSON.stringify(currentlist))
+        localStorage.setItem("hotel_bookings", JSON.stringify(currentlist));
         alert("Your booking has been stored at localStorage")
-    }
+    };
+
     return (
-        <div className={"flex justify-center"}>
-            <form
-                action={handleBooking}
-                className={"md:mx-auto "}>
+        <div className="border border-gray-100 p-6 shadow-lg rounded-2xl bg-white mt-9 mx-auto max-w-6xl">
+            <form action={handleBooking} className="space-y-6">
+                <h2 className="text-xl font-semibold">Complete your booking for {hotel?.name}</h2>
 
-                <input
-                    type="text"
-                    placeholder={"First name"}
-                    name={"firstname"}
-                    className={"border border-gray-100 p-2 rounded-2xl"}
-                />
-                <input
-                    type="text"
-                    placeholder={"Last name"}
-                    name={"lastname"}
-                    className={"border border-gray-100 p-2 rounded-2xl"}
+                {/* 1. First Row: First Name, Last Name, Email */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <input
+                        type="text"
+                        name="firstname"
+                        placeholder="First name"
+                        className="border border-gray-200 p-2 rounded-2xl w-full"
+                        required
+                    />
 
-                /><br/><br/>
-                <input
-                    type="text"
-                    placeholder={"Email"}
-                    name={"email"}
-                    className={"border border-gray-100 p-2 rounded-2xl"}
-                />
-                <input
-                    type="tel"
-                    placeholder={"Phone"}
-                    name={"phone"}
-                    className={"border border-gray-100 p-2 rounded-2xl"}/><br/><br/>
-                <label>Arrival day</label><br/>
-                <input
-                    type="date"
-                    name={"date"}
-                    className={"border border-gray-100 p-2 rounded-2xl"}/>
-                <input
-                    type="number"
-                    name={"nights"}
-                    placeholder={"Number of nights"}
-                    className={"border border-gray-100 p-2 rounded-2xl"}/>
+                    <input
+                        type="text"
+                        name="lastname"
+                        placeholder="Last name"
+                        className="border border-gray-200 p-2 rounded-2xl w-full"
+                        required
+                    />
 
-                <br/><button
-                    className={"bg-red-800 text-white font-bold p-2 rounded-2xl cursor-pointer mt-5"}
-                    type={"submit"}
-                    >
-                        Submit
-                </button>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        className="border border-gray-200 p-2 rounded-2xl w-full"
+                        required
+                    />
+                </div>
+
+                {/* 2. Second Row: Phone, Date, Nights, Guests */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Mobile number"
+                        className="border border-gray-200 p-2 rounded-2xl w-full"
+                        required
+                    />
+
+                    <input
+                        type="date"
+                        name="date"
+                        min={new Date().toISOString().split("T")[0]}
+                        className="border border-gray-200 p-2 rounded-2xl w-full"
+                        required
+                    />
+
+                    <div className="flex items-center border border-gray-200 rounded-2xl px-2">
+                        <label className="text-xs text-gray-400 mr-2 uppercase">Nights</label>
+                        <input
+                            type="number"
+                            name="nights"
+                            min="1"
+                            value={nights}
+                            onChange={(e) => setNights(parseInt(e.target.value) || 1)}
+                            className="w-full p-2 outline-none rounded-2xl"
+                            required
+                        />
+                    </div>
+
+                    <div className="flex items-center border border-gray-200 rounded-2xl px-2">
+                        <label className="text-xs text-gray-400 mr-2 uppercase">Guests</label>
+                        <input
+                            type="number"
+                            name="guests"
+                            min="1"
+                            value={guests}
+                            onChange={(e) => setGuests(parseInt(e.target.value) || 1)}
+                            className="w-full p-2 outline-none rounded-2xl"
+                            required
+                        />
+                    </div>
+                </div>
+
+                {/* 3. Bottom Row: Price and Submit button */}
+                <div className="flex flex-col md:flex-row justify-between items-center bg-gray-50 p-4 rounded-2xl gap-4">
+                    <div className="text-center md:text-left">
+                        <p className="text-sm text-gray-500">Total for {nights} nights</p>
+                        <p className="text-2xl font-bold text-gray-900">${totalCost}</p>
+                    </div>
+
+                    <button type="submit" className="bg-red-800 text-white px-8 py-3 rounded-2xl font-bold hover:bg-red-900 transition-colors w-full md:w-auto">
+                        Book Now
+                    </button>
+                </div>
             </form>
-
         </div>
     )
 }
+
 export default BookingForm

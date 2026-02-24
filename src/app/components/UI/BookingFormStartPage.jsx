@@ -27,6 +27,8 @@ const BookingFormStartPage = ({ allHotels = [] }) => {
             phone,
             arrivalDate,
             numberOfNights,
+            guests,
+            totalCost,
             id: Math.random().toString()
         }
 
