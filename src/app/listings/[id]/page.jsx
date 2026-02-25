@@ -94,7 +94,7 @@ const Page = async ({params}) => {
                 </div>
                 {/*Right column*/}
                 <div className={"hidden md:block col-span-1 "}>
-                    <div className={"sticky top-10 bg-green-50 p-5 rounded-2xl shadow-lg"}>
+                    <div className={"sticky top-10 bg-red-50 p-5 rounded-2xl shadow-lg"}>
                         <h3>Book here</h3>
                         <p>Book now & Pay 30 days later!</p>
                         <div className={"md:my-7"}>

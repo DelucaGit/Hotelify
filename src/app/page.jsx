@@ -10,8 +10,6 @@ import {hotels} from "./data/localdata"
  */
 export default function Home() {
 
-    console.log("From Home page", hotels)
-
     return (
         <div className="relative flex flex-col min-h-screen">
 
