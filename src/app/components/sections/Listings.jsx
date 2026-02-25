@@ -22,7 +22,7 @@ const Listings =  ({hotels}) => {
                 <div className={"border border-blue-50 border rounded-2xl"}>
                     {/* Card image */}
                     <img
-                        className={"rounded-2xl"}
+                        className={"rounded-2xl h-[200px] object-cover w-full"}
                         src={hotel.image} alt={hotel.name}
                         suppressHydrationWarning={true} // I have browser extension that block certain images
                     />
