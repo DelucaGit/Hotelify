@@ -1,9 +1,14 @@
 import React from 'react';
 
+/**
+ * Footer
+ * Site-wide footer with informational columns and legal bar.
+ */
 const Footer = () => {
     return (
         <footer className="bg-blue-900 text-white border-t border-gray-100 pt-16 pb-8">
             <div className="max-w-9/10 mx-auto">
+                {/* Content columns */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                     <div className="col-span-1 md:col-span-1">
                         <h2 className="text-xl font-bold mb-4 text-white">Hotellsidan</h2>
@@ -39,6 +44,7 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
+                {/* Legal / language bar */}
                 <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
                     <div className="mb-4 md:mb-0">
                         © 2024 Hotellsidan Inc. · Privacy · Terms · Sitemap

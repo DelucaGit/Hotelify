@@ -1,6 +1,11 @@
 import React from 'react'
 import BookingFormStartPage from "../UI/BookingFormStartPage";
 
+/**
+ * HeroSection
+ * Full-viewport banner with headline and an embedded quick booking widget.
+ * Accepts the full hotel list to populate the widget dropdown.
+ */
 const HeroSection = ({allHotels}) => {
     console.log("From Hero", allHotels)
     return (
@@ -14,11 +19,10 @@ const HeroSection = ({allHotels}) => {
                 <h1 className={"font-bold md:text-5xl text-3xl text-center text-white "}>
                     Escape Life For a While - <br/> To A Luxury Beyond Stress
                 </h1>
+                {/* Quick booking widget */}
                 <BookingFormStartPage allHotels={allHotels} />
             </div>
         </section>
     )
-
-    // Adding just to new push
 }
 export default HeroSection

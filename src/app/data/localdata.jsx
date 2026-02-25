@@ -1,3 +1,18 @@
+/**
+ * Local demo dataset of hotels used across the app.
+ * Each hotel object fields:
+ * - id: numeric identifier
+ * - name: display name
+ * - location: city/country label
+ * - summary: short description shown in cards
+ * - fullDescription: detailed description for the detail page
+ * - price: nightly price in USD
+ * - rating: 0-5 rating value
+ * - category: grouping label (e.g., Luxury, Boutique)
+ * - image: image URL for hero/card
+ * - coordinates: { lat, lng } used for map links
+ * - mapUrl: prebuilt Google Maps link
+ */
 export const hotels = [
     {
         id: 1,
