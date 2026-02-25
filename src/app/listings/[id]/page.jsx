@@ -3,14 +3,27 @@ import {hotels} from "../../data/localdata";
 import Image from "next/image";
 import BookingButton from "../../components/UI/BookingButton";
 
+/**
+ * Listing detail page
+ *
+ * Dynamic route that renders details for a single hotel using the `[id]` URL segment.
+ * - Reads local `hotels` data and finds the entry by id (string-compare for URL param)
+ * - Displays a hero image, rating, description, and booking entry points
+ */
 const Page = async ({params}) => {
+    // Params are promises in Next.js server components, ensure we await
     const {id} = await params;
+
+    // Find the hotel by id (params are strings, so convert hotel.id to string)
     const hotel = hotels.find(h => h.id.toString() === id); // Because URL params will always be String
+
+    // Fallback UI if the id is invalid
     if(!hotel) return <div>Hotel not found</div>
     return (
         <>
             {/*Banner image*/}
         <div className={"relative w-full h-[300px] md:h-[500px]"}>
+            {/* Banner/hero image for the hotel */}
             <Image
                 src={hotel.image}
                 alt={hotel.name}
@@ -81,10 +94,12 @@ const Page = async ({params}) => {
                 </div>
                 {/*Right column*/}
                 <div className={"hidden md:block col-span-1 "}>
-                    <div className={"sticky top-10 bg-green-50 p-5 rounded-2xl shadow-lg"}>
+                    <div className={"sticky top-10 bg-red-50 p-5 rounded-2xl shadow-lg"}>
                         <h3>Book here</h3>
                         <p>Book now & Pay 30 days later!</p>
-                        <BookingButton hotelId={id}/>
+                        <div className={"md:my-7"}>
+                            <BookingButton hotelId={id}/>
+                        </div>
 
                     </div>
                 </div>

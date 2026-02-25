@@ -1,6 +1,13 @@
 import React from 'react'
 import Link from "next/link";
 
+/**
+ * Listings
+ * Grid of hotel cards. Each card links to its detail page.
+ *
+ * Props:
+ * - hotels: array of hotel objects to display
+ */
 const Listings =  ({hotels}) => {
 
     console.log("From Listings",hotels)
@@ -13,17 +20,21 @@ const Listings =  ({hotels}) => {
             {hotels.map(hotel =>
                 <Link key={hotel.id} href={`/listings/${hotel.id}`}>
                 <div className={"border border-blue-50 border rounded-2xl"}>
+                    {/* Card image */}
                     <img
-                        className={"rounded-2xl"}
+                        className={"rounded-2xl h-[200px] object-cover w-full"}
                         src={hotel.image} alt={hotel.name}
                         suppressHydrationWarning={true} // I have browser extension that block certain images
                     />
+                    {/* Card title */}
                     <h3 className={"font-bold mt-2"}>
                         {hotel.name}
                     </h3>
+                    {/* Short description */}
                     <p className={"mt-2"}>
                         {hotel.summary}
                     </p>
+                    {/* Price snippet */}
                     <p className={"font-bold mt-2 text-xl"}>
                         ${hotel.price}
                     </p>

@@ -2,6 +2,13 @@
 import React from 'react'
 import Link from "next/link";
 
+/**
+ * BookingButton
+ * Navigational CTA that links to the booking page for a specific hotel.
+ *
+ * Props:
+ * - hotelId: id of the hotel; if absent, the button is not rendered.
+ */
 const BookingButton = ({hotelId}) => {
     if(!hotelId) return null;
     return (
